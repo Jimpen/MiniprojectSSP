@@ -28,5 +28,4 @@ public class DbTestController {
             return "Database connectivity seems " + (two == 2 ? "OK." : "weird!");
         }
     }
-
 }
