@@ -12,7 +12,8 @@ img {
     width: 30%;
 }
 
-ol li {
+ol {
     text-align: center;
     text-decoration: none;
+    list-style-position:inside;
 }
