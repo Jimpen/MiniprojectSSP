@@ -7,3 +7,12 @@ h1 {
     font-size: 80px;
     font-family: Bangers;
 }
+
+img {
+    width: 30%;
+}
+
+ol li {
+    text-align: center;
+    text-decoration: none;
+}
