@@ -5,12 +5,14 @@
     color: #fff;
 }
 .Block1 {
+    visibility: hidden;
     float: left;
     width: 200px;
     height: 100px;
     margin: 1em;
   }
   .Block2 {
+    visibility: hidden;
     float: right;
     width: 200px;
     height: 100px;
