@@ -1,11 +1,17 @@
 * {
     font-family: 'Concert One';
     text-align: center;
+    background-color: #ce5a2e;
+    color: #fff;
 }
 
 h1 {
     font-size: 80px;
     font-family: Bangers;
+}
+
+#log-in  {
+    float: right;
 }
 
 img {
@@ -16,4 +22,21 @@ ol {
     text-align: center;
     text-decoration: none;
     list-style-position:inside;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+li {
+    font-size: 25px;
+}
+
+#rules {
+    margin-top: 6%;
+}
+
+hr {
+    width: 85%;
+    margin-top: 10%;
 }
