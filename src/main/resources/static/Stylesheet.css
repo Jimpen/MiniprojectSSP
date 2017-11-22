@@ -17,18 +17,19 @@
     margin: 1em;
   }
 
-  #buttons {
-  
-    width: 20%;
-    height: 20%;
+#buttons {
+    
+    width: 30%;
+    height: 25%;
+    padding: 2%;
     margin-right: auto;
     margin-left: auto;
     text-rendering: center;
-  }
+}
 
 
 h1 {
-    font-size: 80px;
+    font-size: 90px;
     font-family: Bangers;
 }
 
@@ -44,6 +45,7 @@ ol {
     text-align: center;
     text-decoration: none;
     list-style-position:inside;
+    margin-left: -50px;
 }
 
 h4 {
@@ -54,11 +56,13 @@ li {
     font-size: 25px;
 }
 
+
 #rules {
-    margin-top: 6%;
+    font-size: 25px;
 }
 
 hr {
     width: 85%;
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-bottom: 2%;
 }
