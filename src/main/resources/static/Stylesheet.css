@@ -4,6 +4,28 @@
     background-color: #ce5a2e;
     color: #fff;
 }
+.Block1 {
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+  }
+  .Block2 {
+    float: right;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+  }
+
+  #buttons {
+  
+    width: 20%;
+    height: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    text-rendering: center;
+  }
+
 
 h1 {
     font-size: 80px;
