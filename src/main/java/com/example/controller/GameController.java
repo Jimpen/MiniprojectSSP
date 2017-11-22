@@ -40,9 +40,9 @@ public class GameController {
 	}
 
 	@PostMapping("/newuser")
-	public String submit(HttpSession session, @RequestParam String username, @RequestParam String password) {
-		System.out.println(username);
-			return "index";
+	public ModelAndView submit(HttpSession session, @RequestParam String username, @RequestParam String password) {
+		System.out.println(username+" "+password);
+			return new ModelAndView("/login");
 	}
 
 }
