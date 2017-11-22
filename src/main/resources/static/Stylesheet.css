@@ -4,6 +4,15 @@
     background-color: #ce5a2e;
     color: #fff;
 }
+
+#header {
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
 .Block1 {
     visibility: hidden;
     float: left;
@@ -67,6 +76,7 @@ ol {
     text-decoration: none;
     list-style-position:inside;
     margin-left: -50px;
+    margin-bottom: -20px;
 }
 
 h4 {
@@ -84,6 +94,10 @@ li {
 
 hr {
     width: 85%;
-    margin-top: 5%;
+    margin-top: 15%;
     margin-bottom: 2%;
+}
+
+h5 {
+    font-size: 50px;
 }
