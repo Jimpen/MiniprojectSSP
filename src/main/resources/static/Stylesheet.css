@@ -15,6 +15,7 @@
 
 .Block1 {
     visibility: hidden;
+    display: none;
     float: left;
     width: 200px;
     height: 100px;
@@ -22,6 +23,7 @@
   }
   .Block2 {
     visibility: hidden;
+      display: none;
     float: right;
     width: 200px;
     height: 100px;
