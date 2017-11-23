@@ -4,5 +4,6 @@ package com.example.controller;
 
 public interface Repo {
 
-    void addMember (String username, String password);
+    String addMember (String username, String password);
+    String validateLogin (String username, String password);
 }

@@ -26,7 +26,7 @@ public class GameController {
 
 	}
 
-	@GetMapping("/ssp/")
+	@GetMapping("/ssp")
 	public ModelAndView showGame() {
 		System.out.println("HÄNDER DET NÅGOT");
 		return new ModelAndView("/ssp");
@@ -45,8 +45,25 @@ public class GameController {
 	@PostMapping("/newuser")
 	public ModelAndView submit(HttpSession session, @RequestParam String username, @RequestParam String password) {
 		System.out.println(username+" "+password);
-		scoreRepository.addMember(username,password);
-		return new ModelAndView("/login");
+		String answer = scoreRepository.addMember(username,password);
+		if(answer.equals("")){
+			return new ModelAndView("/login");
+		}
+		else{
+			System.out.println("Hans was here");
+			return new ModelAndView("/newuser").addObject("registrationError",answer);
+		}
+	}
+
+	@PostMapping("/login")
+	public ModelAndView login(HttpSession session, @RequestParam String username, @RequestParam String password){
+		System.out.println(username+" "+password);
+		String answer = scoreRepository.validateLogin(username, password);
+		if(answer.equals(username)){
+			return new ModelAndView("/ssp").addObject("username",username);
+		}
+		else return new ModelAndView("/login").addObject("loginError",answer);
+
 	}
 
 }
