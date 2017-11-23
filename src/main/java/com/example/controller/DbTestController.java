@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 @Controller
-public class DbTestController {
+public class DbTestController{
 
     @Autowired
     DataSource dataSource;
