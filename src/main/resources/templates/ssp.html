@@ -12,27 +12,35 @@
 </head>
 <body>
 <a href="/index.html" id="header"><h1>Sten Sax Påse</h1></a>
-<script src="/script.js"></script>
-
 <div>
     <p th:text="Välkommen + ' ' +${username} +'!'"></p>
 </div>
 
-<div class = "Block1">
-    <img src="bag.jpg"></img>
-    <img src="stone.jpg"></img>
-    <img src="scissor.jpg"></img>
+<div id="mainContent">
+
+    <div id="playerchoice">
+        <img class="hidden" src="bag.jpg" id="playerBag"></img>
+        <img class="hidden" src="stone.jpg" id="playerRock"></img>
+        <img class="hidden" src="scissor.jpg" id="playerScissors"></img>
+    </div>
+
+    <iframe id="gif" width="500" height="352"
+            src="https://giphy.com/gifs/PS0VHHgFpZ9fO/html5">
+    </iframe>
+    <!--<span class="hidden" id= "fillerblock" ></span>-->
+
+    <div id="computerchoice" >
+        <img class="hidden" src="bag.jpg" id="computerBag"></img>
+        <img class="hidden" src="stone.jpg" id="computerRock"></img>
+        <img class="hidden" src="scissor.jpg" id="computerScissors"></img>
+    </div>
+
+
+
+
+
 </div>
 
-<div class = "Block2">
-    <img src="bag.jpg"></img>
-    <img src="stone.jpg"></img>
-    <img src="scissor.jpg"></img>
-</div>
-
-<iframe id="gif" width="500" height="352"
-        src="https://giphy.com/gifs/PS0VHHgFpZ9fO/html5">
-</iframe>
 <!--img class="images" src="img.jpg">
 <img class="images" src="img.jpg"-->
 
@@ -56,5 +64,6 @@
 </div>
 <hr></hr>
 <p id="footer">© Vanessa , Jimmy , Erik och Hans</p>
+<script src="/script.js"></script>
 </body>
 </html>

@@ -1,3 +1,19 @@
+//variabler från html
+var bag = document.getElementById("bag");
+var rock = document.getElementById("stone");
+var scissors = document.getElementById("scissor");
+var footer = document.getElementById("footer");
+var playerBag = document.getElementById("playerBag");
+var playerRock = document.getElementById("playerRock");
+var playerScissors = document.getElementById("playerScissors");
+var gif = document.getElementById("gif");
+var computerRock = document.getElementById("computerRock");
+var computerBag = document.getElementById("computerBag");
+var computerScissors = document.getElementById("computerScissors");
+//
+var computerChoice;
+
+
 
 
 function userChoice(){
@@ -6,53 +22,83 @@ function userChoice(){
 
 }
 
-function computerChoice	() {
+function computerMakeChoice	() {
 	var randomNumber = Math.random();
 
 	if (randomNumber <= 0.34) {
-		document.getElementById("stone")//return <img src="stone.jpg">; //Show img = "sten" hide class = "images"
+	    computerChoice = "rock";
+	    computerRock.classList.remove("hidden");
 
 	} else if (randomNumber <= 0.67) {
-        document.getElementById("bag")//return <img src="bag.jpg">; //Show img = "bag" hide class = "images"
+        computerChoice = "bag";
+        computerBag.classList.remove("hidden");
 
 	} else {
-        document.getElementById("scissor")//return <img src="scissor.jpg">; //Show img = "scissor" hide class = "images"
+        computerChoice = "scissors";
+        computerScissors.classList.remove("hidden");
 
 	}
 }
 
-function compareChoice(spelare, dator) {
+function compareChoice(player, computer) {
 
-	if (spelare === dator) {
+	if (player === computer) {
 		return 'LIKA';
 	}
-	else if (spelare === sten) {
-        if (dator === sax) {
-            return message(spelare, dator, true); //spelare vinner
+	else if (player === 'rock') {
+        if (computer === "scissors") {
+            return "You rock!!";
         } else {
-            return message(spelare, dator, false); //dator vinner
+            return "Du förlorade";
         }
-    }	else if (spelare === sax) {
-            if (dator === sten) {
-                return message (spelare, dator, false); //dator vinner
+    }	else if (player === "scissors") {
+            if (computer === "rock") {
+                return "You sax";
             } else {
-                return message (spelare, dator, true); //spelare vinner
+                return "Du vann";
             }
-        } else if (spelare === påse) {
-            if (dator === sten) {
-                return message (spelare, dator, true); //spelare vinner
+        } else if (player === "bag") {
+            if (computer === "rock") {
+                return "Du vann";
             } else {
-                return message (spelare, dator, false); //dator vinner
+                return "Du förlorade";
             }
 	}
 }
 
-document.addEventListener("click", function (userChoice) { //remember state, set other states to hidden
-    document.getElementById("stone");
-} );
-document.addEventListener("click", function (userChoice) {
-    document.getElementById("scissor");
+// document.addEventListener("click", function (userChoice) { //remember state, set other states to hidden
+//     document.getElementById("stone");
+// } );
+// document.addEventListener("click", function (userChoice) {
+//     document.getElementById("scissor");
+// });
+// document.addEventListener("click", function (userChoice) {
+//     document.getElementById("bag");
+// });
+
+
+bag.addEventListener("click", function(){
+    console.log("klicka påse");
+    playerBag.classList.remove("hidden");
+    gif.classList.add("hidden");
+    computerMakeChoice();
+    console.log(compareChoice("bag", computerChoice));
 });
-document.addEventListener("click", function (userChoice) {
-    document.getElementById("bag");
-}
+
+rock.addEventListener("click", function(){
+    playerRock.classList.remove("hidden");
+    gif.classList.add("hidden");
+    computerMakeChoice();
+    console.log(compareChoice("rock", computerChoice));
+});
+
+scissors.addEventListener("click", function(){
+    playerScissors.classList.remove("hidden");
+    gif.classList.add("hidden");
+    computerMakeChoice();
+    console.log(compareChoice("scissors", computerChoice));
+});
+
+footer.addEventListener("click",function () {
+    console.log("Vanuscha klickar på foten");
+});
