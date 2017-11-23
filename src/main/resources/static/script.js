@@ -14,7 +14,4 @@ function computerChoice	() {
 	}
 }
 
-function playerChoice() {
-	addEventListener()
-}
-  
+
