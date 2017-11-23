@@ -1,19 +1,21 @@
 
 
 function userChoice(){
-	var state; //fixa state för vilken bild som ska visas
-
+    document.getElementsById("computerStone").classList.remove("display");
 
 }
 
 function computerChoice	() {
 	var randomNumber = Math.random();
+    var dator;
 
 	if (randomNumber <= 0.34) {
 		document.getElementById("stone")//return <img src="stone.jpg">; //Show img = "sten" hide class = "images"
 
+
 	} else if (randomNumber <= 0.67) {
         document.getElementById("bag")//return <img src="bag.jpg">; //Show img = "bag" hide class = "images"
+
 
 	} else {
         document.getElementById("scissor")//return <img src="scissor.jpg">; //Show img = "scissor" hide class = "images"
@@ -24,7 +26,7 @@ function computerChoice	() {
 function compareChoice(spelare, dator) {
 
 	if (spelare === dator) {
-		return 'LIKA';
+		return message = 'LIKA';
 	}
 	else if (spelare === sten) {
         if (dator === sax) {
@@ -49,10 +51,12 @@ function compareChoice(spelare, dator) {
 
 document.addEventListener("click", function (userChoice) { //remember state, set other states to hidden
     document.getElementById("stone");
+    console.log("kör")
+
 } );
 document.addEventListener("click", function (userChoice) {
     document.getElementById("scissor");
 });
 document.addEventListener("click", function (userChoice) {
     document.getElementById("bag");
-}
+});
