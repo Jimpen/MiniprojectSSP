@@ -1,16 +1,9 @@
 
 
 function userChoice(){
-    document.addEventListener("click", function () {
-		document.getElementById("stone");
-    } );
-    document.addEventListener("click", function () {
-		document.getElementById("scissor");
-    });
-    document.addEventListener("click", function () {
-    	document.getElementById("bag");
+	var state; //fixa state för vilken bild som ska visas
 
-    } );
+
 }
 
 function computerChoice	() {
@@ -35,21 +28,31 @@ function compareChoice(spelare, dator) {
 	}
 	else if (spelare === sten) {
         if (dator === sax) {
-            return message(spelare, dator, true);
+            return message(spelare, dator, true); //spelare vinner
         } else {
-            return message(spelare, dator, false);
+            return message(spelare, dator, false); //dator vinner
         }
     }	else if (spelare === sax) {
             if (dator === sten) {
-                return message (spelare, dator, false);
+                return message (spelare, dator, false); //dator vinner
             } else {
-                return message (spelare, dator, true);
+                return message (spelare, dator, true); //spelare vinner
             }
         } else if (spelare === påse) {
             if (dator === sten) {
-                return message (spelare, dator, true);
+                return message (spelare, dator, true); //spelare vinner
             } else {
-                return message (spelare, dator, false);
+                return message (spelare, dator, false); //dator vinner
             }
 	}
+}
+
+document.addEventListener("click", function (userChoice) { //remember state, set other states to hidden
+    document.getElementById("stone");
+} );
+document.addEventListener("click", function (userChoice) {
+    document.getElementById("scissor");
+});
+document.addEventListener("click", function (userChoice) {
+    document.getElementById("bag");
 }
