@@ -17,21 +17,23 @@ var computerChoice;
 
 
 function userChoice(){
-	var state; //fixa state för vilken bild som ska visas
-
+    document.getElementsById("computerStone").classList.remove("display");
 
 }
 
 function computerMakeChoice	() {
 	var randomNumber = Math.random();
+    var dator;
 
 	if (randomNumber <= 0.34) {
 	    computerChoice = "rock";
 	    computerRock.classList.remove("hidden");
 
+
 	} else if (randomNumber <= 0.67) {
         computerChoice = "bag";
         computerBag.classList.remove("hidden");
+
 
 	} else {
         computerChoice = "scissors";
@@ -44,6 +46,7 @@ function compareChoice(player, computer) {
 
 	if (player === computer) {
 		return 'LIKA';
+
 	}
 	else if (player === 'rock') {
         if (computer === "scissors") {
@@ -102,3 +105,4 @@ scissors.addEventListener("click", function(){
 footer.addEventListener("click",function () {
     console.log("Vanuscha klickar på foten");
 });
+
