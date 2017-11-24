@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -66,5 +67,15 @@ public class GameController {
 		else return new ModelAndView("/login").addObject("loginError",answer);
 
 	}
+
+	@GetMapping("/win")
+	@ResponseBody
+	public void addWin(){
+		System.out.println("Hans was here");
+		scoreRepository.addWin();
+	}
+
+
+
 
 }

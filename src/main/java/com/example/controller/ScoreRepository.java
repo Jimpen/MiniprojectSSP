@@ -9,7 +9,7 @@ import java.sql.*;
 
 @Component
 public class ScoreRepository implements Repo {
-
+    private String currentUser;
     @Autowired
     private DataSource dataSource;
 
@@ -27,7 +27,7 @@ public class ScoreRepository implements Repo {
         }
         if (dataSource != null) {
             try (Connection conn = dataSource.getConnection();
-                 PreparedStatement statement = conn.prepareStatement("INSERT INTO people(username,password) VALUES(?,?)")) {
+                 PreparedStatement statement = conn.prepareStatement("INSERT INTO people(username,password,won,draw,lost) VALUES(?,?,0,0,0)")) {
                 statement.setString(1, username);
                 statement.setString(2, password);
                 statement.executeUpdate();
@@ -51,6 +51,7 @@ public class ScoreRepository implements Repo {
             if (!rs.next()) {
                 return "Användarnamn eller lösenord fel";
             } else {
+                currentUser = username;
                 return username;
             }
         }
@@ -58,6 +59,21 @@ public class ScoreRepository implements Repo {
             System.err.println("Great critical error of in validateLogin");
         }
         return "";
+    }
+
+    public void addWin(){
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement statement = conn.prepareStatement("UPDATE people SET won = (won + 1) WHERE username = ?")){
+
+            statement.setString(1,currentUser);
+        }
+        catch(SQLException e){
+            System.err.println("ERROR in addScore");
+        }
+
+//        UPDATE people
+//        SET won = (won + 1)
+//        WHERE username = 'Testman';
     }
 
     private boolean doUserNameExist(String username) {
