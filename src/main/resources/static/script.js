@@ -120,6 +120,10 @@ footer.addEventListener("click",function () {
     console.log("Vanuscha klickar på foten");
 });
 
+resetButton.addEventListener("click",function(){
+    window.location.reload();
+});
+
 function hideButtons() {
     bag.classList.add("hidden");
     rock.classList.add("hidden");
