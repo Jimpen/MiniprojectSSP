@@ -26,6 +26,7 @@ public class GameController {
 
 	}
 
+	//TODO ta bort denhär???
 	@GetMapping("/ssp")
 	public ModelAndView showGame() {
 		System.out.println("HÄNDER DET NÅGOT");

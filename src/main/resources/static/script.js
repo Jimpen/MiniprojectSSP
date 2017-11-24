@@ -10,6 +10,8 @@ var gif = document.getElementById("gif");
 var computerRock = document.getElementById("computerRock");
 var computerBag = document.getElementById("computerBag");
 var computerScissors = document.getElementById("computerScissors");
+var resultText = document.getElementById("resultText");
+var resetButton = document.getElementById("reset");
 //
 var computerChoice;
 
@@ -85,24 +87,45 @@ bag.addEventListener("click", function(){
     playerBag.classList.remove("hidden");
     gif.classList.add("hidden");
     computerMakeChoice();
+    resultText.classList.remove("hidden");
+    resultText.innerText = compareChoice("bag", computerChoice);
     console.log(compareChoice("bag", computerChoice));
+    hideButtons();
+    resetButton.classList.remove("hidden");
 });
 
 rock.addEventListener("click", function(){
     playerRock.classList.remove("hidden");
     gif.classList.add("hidden");
     computerMakeChoice();
+    resultText.classList.remove("hidden");
+    resultText.innerText = compareChoice("rock", computerChoice);
     console.log(compareChoice("rock", computerChoice));
+    hideButtons();
+    resetButton.classList.remove("hidden");
 });
 
 scissors.addEventListener("click", function(){
     playerScissors.classList.remove("hidden");
     gif.classList.add("hidden");
     computerMakeChoice();
+    resultText.classList.remove("hidden");
+    resultText.innerText = compareChoice("scissors", computerChoice);
     console.log(compareChoice("scissors", computerChoice));
+    hideButtons();
+    resetButton.classList.remove("hidden");
 });
 
 footer.addEventListener("click",function () {
     console.log("Vanuscha klickar på foten");
 });
+
+function hideButtons() {
+    bag.classList.add("hidden");
+    rock.classList.add("hidden");
+    scissors.classList.add("hidden");
+}
+
+
+
 
